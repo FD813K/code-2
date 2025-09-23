@@ -1,0 +1,53 @@
+import java.util.Scanner; 
+ 
+public class Mavenproject2 { 
+ 
+    public static void main(String[] args) { 
+ 
+        Scanner scanner = new Scanner(System.in); 
+        System.out.println("Enter The Numbers of Three Subjects out of 100. "); 
+ 
+        System.out.println("Enter your first number:"); 
+        int n1 = scanner.nextInt(); 
+        System.out.println("Enter your second number:"); 
+        int n2 = scanner.nextInt(); 
+        System.out.println("Enter your Third Number."); 
+        int n3 = scanner.nextInt(); 
+        System.out.println("Total Marks Is: "+add(n1, n2, n3)); 
+        System.out.println("The Average is: "+sub(add(n1, n2, n3))); 
+        System.out.println("The Grade is: "+mul(sub(add(n1, n2, n3)))); 
+        scanner.close(); 
+    } 
+ 
+    static int add(int a, int b, int c)  
+    { 
+        return a+b+c; 
+    } 
+ 
+    static double sub(int a)  
+    { 
+        return a/3.0; 
+    } 
+ 
+    static char mul(double a)  
+    { 
+        if (a>=85) 
+        { 
+            return 'A'; 
+        }  
+        else if (a>=80&&a<85)  
+        { 
+            return 'B'; 
+        }  
+        else if (a>=75&&a<80) 
+        { 
+            return 'C'; 
+        } 
+        else if (a<60)  
+        { 
+            return 'F'; 
+        } 
+        return 'D'; 
+    } 
+ 
+} 
