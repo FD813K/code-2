@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class Mavenproject2 {
+static int a,b,c;  
+    static void totalmarks(int a, int b, int c)
+    { 
+        System.out.println("calculating:");
+        int sum=a+b+c;
+        System.out.println("The Sum is "+sum);
+    }
+
+    static double averagemarks()
+    {
+        double average=(a+b+c)/3.0;
+        return average;
+    }
+
+    static char grade(double average)
+    {
+        if(average>=85)
+        {
+            return 'A';
+        }
+        if(average>=70)
+        {
+            return 'B';
+        }
+        if(average>=50)
+        {
+            return 'C';
+        }
+        else
+        {
+            return 'F';
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner x=new Scanner(System.in);
+        System.out.println("Enter the Marks of The Subjects: ");
+        System.out.println(" Marks of Subject 1: ");
+        a=x.nextInt();
+        
+        System.out.println(" Marks of Subject 2: ");
+        b=x.nextInt();
+        
+        System.out.println(" Marks of Subject 3: ");
+        c=x.nextInt();
+
+        double avg=averagemarks();
+        totalmarks(a,b,c);
+        System.out.println("Calculating the average:");
+        System.out.println("The Average is "+avg);
+        System.out.println("Finding Grade.");
+        System.out.println("The Grade is "+grade(avg));
+    }
+}
