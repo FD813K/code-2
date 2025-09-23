@@ -1,0 +1,76 @@
+import java.util.Scanner; 
+ 
+public class Mavenproject2 { 
+ 
+    public static void main(String[] args) { 
+ 
+        Scanner loop = new Scanner(System.in); 
+        int price = 0; 
+        System.out.println("Press 1 for Small, 2 for Large and 3 for Extra Large Pizza: "); 
+        int a1 = loop.nextInt(); 
+        while (a1<1||a1>3) { 
+            System.out.println("Invalid input. Enter 1, 2 or 3."); 
+            a1 = loop.nextInt(); 
+        } 
+ 
+        switch (a1) { 
+            case 1: 
+                System.out.println("You Have Selected Small Pizza = 100 rs"); 
+                price += 100; 
+                break; 
+            case 2: 
+                System.out.println("You Have Selected Large Pizza = 200 rs"); 
+                price += 200; 
+                break; 
+            case 3: 
+                System.out.println("You Have Selected Extra Large Pizza = 300 rs"); 
+                price += 300; 
+                break; 
+        } 
+   
+        System.out.println("Do you want Extra Pepperoni? Press 1 for Yes and 2 for No: "); 
+        int a5 = loop.nextInt(); 
+ 
+        while (a5!=1&&a5!=2) { 
+            System.out.println("Invalid input. Press 1 for Yes and 2 for No: "); 
+            a5 = loop.nextInt(); 
+        } 
+        if (a5==1) { 
+            System.out.println("Press 1 for Small and 2 for Medium/Large Pepperoni: "); 
+            int a6 = loop.nextInt(); 
+            while (a6!=1 && a6!=2) { 
+                System.out.println("Invalid input. Enter 1 or 2: "); 
+                a6 = loop.nextInt(); 
+            } 
+            switch (a6) { 
+                case 1: 
+                    System.out.println("You have Selected Small Pepperoni +50 rs to price."); 
+                    price += 50; 
+                    break; 
+                case 2: 
+                    System.out.println("You have selected Medium/Large Pepperoni +100 rs to 
+price."); 
+                    price += 100; 
+                    break; 
+            } 
+        } 
+        System.out.println("Do you want Extra Cheese? Press 1 for Yes and 2 for No: "); 
+        int a7 = loop.nextInt(); 
+        while (a7!=1 && a7!=2) { 
+            System.out.println("Invalid input. Press 1 for Yes and 2 for No: "); 
+            a7 = loop.nextInt(); 
+        } 
+        switch (a7) { 
+            case 1: 
+                System.out.println("You have Selected Extra Cheese +30 rs to price."); 
+                price += 30; 
+                break; 
+            case 2: 
+                System.out.println("No Extra Cheese selected."); 
+                break; 
+        } 
+ 
+        System.out.println("Your Total Price = " + price + " rs"); 
+        loop.close(); 
+    } 
+} 
