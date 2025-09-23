@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Mavenproject2 {
+    static double billamount;
+    static double splitbill1;
+    static double totalbill(double billamountent)
+    { 
+        System.out.println("Finilizing Amount.");
+        billamount=billamountent;
+        return billamount;
+    }
+   static void splitbill()
+   {
+       System.out.println("Enter the number of people.");
+        Scanner x2=new Scanner(System.in);
+        double a1=x2.nextDouble();
+       splitbill1=billamount/a1;
+       
+       
+   }
+
+    public static void main(String[] args)
+    {
+        Scanner x=new Scanner(System.in);
+        System.out.println("Enter the total Bill.");
+        double x1=x.nextDouble();
+        totalbill(x1);
+        
+        splitbill();
+        
+        System.out.println("The bill on each person is "+splitbill1);
+        
+        
+    }
+}
