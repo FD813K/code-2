@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Mavenproject1 {
+
+    public static void main(String[] args) {
+        Scanner loop = new Scanner(System.in);
+        System.out.println("Enter Quiz Marks Out of 15:");
+        int a1= loop.nextInt();
+        System.out.println("Enter the Assignment marks out of 10:");
+        int a2=loop.nextInt();
+        System.out.println("Enter Mid Term Marks Out of 25:");
+        int a3=loop.nextInt();
+        System.out.println("Enter the Final Term Marks out of 50:");
+        int a4=loop.nextInt();
+        
+        int totalmarks=a1+a2+a3+a4;
+        
+        System.out.println("The Total Marks Obtained By the Student is: "+totalmarks);
+        
+      
+        if(totalmarks>=50&&totalmarks<70)
+        {
+            System.out.println("C Grade.");
+        }
+        else if(totalmarks>=70&&totalmarks<85)
+        {
+            System.out.println("Grade B. ");
+        }
+        else if(totalmarks>=85)
+        {
+            System.out.println("Grade A.");
+        }
+        
+        loop.close();
+    }
+}
