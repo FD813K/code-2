@@ -1,0 +1,79 @@
+import java.util.Scanner;
+public class Mavenproject1 {
+
+    public static void main(String[] args) {
+        Scanner loop = new Scanner(System.in);
+        System.out.println("Press 1 for Small, 2 for Large and 3 For Extra Large Pizza: ");
+        int a1 = loop.nextInt();
+        int price = 0;
+
+        switch (a1) {
+            case 1: {
+                System.out.println("You Have Selected Small Pizza=100rs");
+                price = price + 100;
+                break;
+            }
+            case 2: {
+                System.out.println("You Have Selected Large Pizza=200rs.");
+                price = price + 200;
+                break;
+            }
+            case 3: {
+                System.out.println("You Have Selected Extra Large Pizza Price=300rs");
+                price = price + 300;
+                break;
+            }
+            default: {
+                System.out.println("Enter 1,2 or 3.");
+                break;
+            }
+        }
+
+        System.out.println("Do you want Extra Pepperoni Press 1 for yes and 2 for No: ");
+        int a5 = loop.nextInt();
+        if (a5 == 1) {
+            System.out.println("Press 1 for Small and 2 For Meduim/Large: ");
+            int a6 = loop.nextInt();
+
+            switch (a6) {
+                case 1: {
+                    System.out.println("You have Selected Small +50rs to price.");
+                    price = price + 50;
+                    break;
+                }
+                case 2: {
+                    System.out.println("You have selected Medium/Large +100 to price");
+                    price = price + 100;
+                    break;
+                }
+                default: {
+                    System.out.println("Enter Between 1 and 2.");
+                    break;
+                }
+            }
+
+            System.out.println("Do you Want Extra Cheese:");
+            System.out.println("Press 1 for Yes and 2 For No: ");
+            int a7 = loop.nextInt();
+
+            switch (a7) {
+                case 1: {
+                    System.out.println("You have Selected Small +30rs to price. Confirming Order.");
+                    price = price + 30;
+                    break;
+                }
+                case 2: {
+                    System.out.println("Confirming Order.");
+                    break;
+                }
+                default: {
+                    System.out.println("Enter Between 1 and 2.");
+                    break;
+                }
+            }
+        }
+
+        System.out.println("Your Total Price = " + price + " rs");
+        loop.close();
+    }
+}
