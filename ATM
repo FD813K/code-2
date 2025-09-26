@@ -1,0 +1,143 @@
+package com.mycompany.mavenproject2;
+
+import java.util.Scanner;
+
+public class Mavenproject2 
+{
+    static int amount = 0;
+    static String pin = "1122334411"; 
+    static int attempts = 3;
+    static String p;
+    static String newpin;
+    static String name;
+
+    public static void main(String[] args) 
+    {
+        Scanner x = new Scanner(System.in);
+        System.out.println("\t\t\t ATM");
+        System.out.println("Press any key for admin and 2 for new Registration: ");
+        int y = x.nextInt();
+        x.nextLine();
+
+        if (y == 2)
+        {
+            System.out.println("Enter your Name:");
+            name = x.nextLine();
+
+            while (true)
+            {
+                System.out.print("Enter your Pin code: ");
+                newpin = x.nextLine();
+                if (newpin.matches("\\d+")&&newpin.length()==4) 
+                {
+                    System.out.println("Your pin has been successfully created.");
+                    break;
+                } else if(pin.length()!=4)
+                {
+                    System.out.println("Error: Enter pin of 4 digits.");
+                }
+                if(!newpin.matches("\\d+"))
+                        {
+                            System.out.println("Error Enter Digits only");
+                        }
+                
+            }
+        }
+
+
+        for (int i = 1; i <= 3; i++) 
+        {
+            System.out.print("Enter your Pin: ");
+            p = x.nextLine();
+
+            if (!p.matches("\\d+")) 
+            {
+                System.out.println("Error: Input must contain digits only.");
+                continue;
+            }
+
+            if (pin.length()==4&&pin.equals(p) || (newpin.length()==4&& newpin.equals(p))) 
+            {
+                break;
+            } else {
+                attempts--;
+                System.out.println("You have " + attempts + " attempts remaining");
+            }
+        }
+
+        if (pin.length()==4&&pin.equals(p) || (newpin.length()==4&& newpin.equals(p)))
+        {
+            if (newpin.equals(p)) 
+            {
+                System.out.println("Welcome Back " + name);
+            } else
+            {
+                System.out.println("Admin Mode");
+            }
+
+            for (int i = 1; i <= 20; i++)
+            {
+                System.out.println("\t\t\t\tMenu");
+                System.out.println("1. Deposit");
+                System.out.println("2. Withdraw");
+                System.out.println("3. Check Balance");
+                System.out.println("4. Exit");
+                System.out.print("Enter your option: ");
+
+                int a = x.nextInt();
+                switch (a) {
+                    case 1:
+                    {
+                        deposit();
+                        break;
+                    }
+                    case 2:
+                    {
+                        withdraw();
+                        break;
+                    }
+                    case 3:
+                    {
+                        System.out.println("Your balance is " + amount);
+                        break;
+                    }
+                    case 4: {
+
+                    }
+
+                }
+                if(a==4)
+                {
+                    System.out.println("You Have Exited The Program.");
+                    break;
+                }
+            }
+        } else
+        {
+            System.out.println("Password is incorrect.");
+            
+        }
+    }
+
+    static void deposit() 
+    {
+        Scanner x = new Scanner(System.in);
+        System.out.println("\nEnter the amount you want to Deposit: ");
+        int am = x.nextInt();
+        amount = amount + am;
+    }
+
+    static void withdraw() 
+    {
+        Scanner x = new Scanner(System.in);
+        System.out.println("\nEnter the amount you want to Withdraw: ");
+        int wt = x.nextInt();
+        if (wt > amount) 
+        {
+            System.out.println("You have insufficient balance");
+        } else 
+        {
+            amount = amount - wt;
+        }
+    }
+}
