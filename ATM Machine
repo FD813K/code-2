@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Mavenproject2 {
+    static int amount = 0;
+    static int pin = 1122334411; 
+    static int attempts = 3;
+    static int p;
+    static int newpin;
+    static String name;
+
+    public static void main(String[] args) {
+        Scanner x = new Scanner(System.in);
+
+        System.out.println("\t\t\t ATM");
+        System.out.println("Press any key for Admin and 2 for new Registration: ");
+        int y = x.nextInt();
+
+        if (y == 2) {
+            x.nextLine();
+            System.out.println("Enter your Name:");
+            name = x.nextLine();
+            System.out.println("Enter your Pin code:");
+            newpin = x.nextInt();
+            System.out.println("Your pin has been successfully created.");
+        }
+
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Enter your Pin:");
+            p = x.nextInt();
+            if (pin == p || newpin == p) {
+                break;
+            } else {
+                attempts--;
+                System.out.println("You have " + attempts + " attempts remaining");
+            }
+        }
+
+        if (pin == p || newpin == p) {
+            if (newpin == p) {
+                System.out.println("Welcome Back " + name);
+            } else {
+                System.out.println("Admin Mode");
+            }
+
+            for (int i = 1; i <= 20; i++) {
+                System.out.println("\t\t\t\tMenu");
+                System.out.println("1. Deposit");
+                System.out.println("2. Withdraw");
+                System.out.println("
