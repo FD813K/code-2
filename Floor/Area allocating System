@@ -1,0 +1,63 @@
+package px81; 
+import java.util.Scanner; 
+public class Px81 { 
+    public static void main(String[] args) { 
+        Scanner x1 = new Scanner(System.in); 
+ 
+    
+        Building o1 = new Building(); 
+        System.out.println("Enter details for House:"); 
+        o1.get(); 
+ 
+    
+        Building o2 = new Building(); 
+        System.out.println("\nEnter details for Office:"); 
+        o2.get(); 
+ 
+        System.out.println("\n--- House Info ---"); 
+        o1.show(); 
+        o1.areaperperson(); 
+ 
+        System.out.println("\n--- Office Info ---"); 
+        o2.show(); 
+        o2.areaperperson(); 
+ 
+        x1.close(); 
+    } 
+} 
+ 
+class Building  
+{ 
+    public int floors; 
+    public double area; 
+    public int occupants; 
+    Scanner x1 = new Scanner(System.in); 
+ 
+    public void get()  
+    { 
+        System.out.print("Floors: "); 
+        floors = x1.nextInt(); 
+        System.out.print("Area: "); 
+        area = x1.nextDouble(); 
+        System.out.print("Occupants: "); 
+        occupants = x1.nextInt(); 
+    } 
+ 
+    public void show() 
+    { 
+        System.out.println("Floors: " + floors); 
+        System.out.println("Area: " + area); 
+        System.out.println("Occupants: " + occupants); 
+    } 
+ 
+    public void areaperperson() 
+    { 
+        if (occupants > 0) 
+        { 
+            System.out.println("Area per Person: " + (area / occupants)); 
+        } else 
+        { 
+            System.out.println("No occupants."); 
+        } 
+    } 
+} 
