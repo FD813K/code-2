@@ -1,0 +1,48 @@
+package px81; 
+ 
+import java.util.Scanner; 
+ 
+public class Px81 
+{ 
+    public static void main(String[] args)  
+    { 
+        Rectangle o1 = new Rectangle(); 
+        o1.set(15.7,9.5); 
+        System.out.println("Length = "+o1.getLength()); 
+        System.out.println("Width = "+o1.getWidth()); 
+        System.out.println("Perimeter = "+o1.perimeter()); 
+        System.out.println("Area = "+o1.area()); 
+    } 
+} 
+ 
+class Rectangle 
+{ 
+    private double length = 1.0; 
+    private double width = 1.0; 
+ 
+    public void set(double l, double w) 
+    { 
+        if (l>0.0&&l<30.0) length =l; 
+        if (w>0.0&&w<30.0) width =w; 
+    } 
+ 
+    public double getLength()  
+    { 
+        return length; 
+    } 
+ 
+    public double getWidth()  
+    { 
+        return width; 
+    } 
+ 
+    public double perimeter() 
+    { 
+        return 2*(length + width); 
+    } 
+ 
+    public double area() 
+    { 
+        return length*width; 
+    } 
+} 
