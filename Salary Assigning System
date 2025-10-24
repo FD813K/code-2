@@ -1,0 +1,74 @@
+public class Employee 
+  { 
+    private int id;           
+    private String name;      
+    private int type;     
+    private double baseSalary;  
+    public Employee(int a_id, String a_name) { 
+        this.id = a_id; 
+        this.name = a_name; 
+        this.type = 1;      
+        this.baseSalary = 0.0;   
+    } 
+    public void setID(int x) { 
+        this.id = x; 
+    } 
+ 
+    public void setName(String x) 
+   { 
+        this.name = x; 
+    } 
+ 
+    public void setBaseSalary(double bs) 
+   { 
+        this.baseSalary = bs; 
+    } 
+    public void setType(int t)  
+    { 
+        if (t == 1 || t == 2)  
+       { 
+            this.type = t; 
+        }  
+        else  
+        { 
+            System.out.println("Invalid type! Use 1 for Regular, 2 for Manager."); 
+        } 
+    } 
+    public int getID() { 
+        return id; 
+    } 
+ 
+    public String getName()  
+   { 
+        return name; 
+    } 
+ 
+    public double getSalary() { 
+        if (type == 2)  
+      {  
+            return baseSalary * 1.10; 
+        } else { 
+            return baseSalary; 
+        } 
+    } 
+    public void displayInfo() { 
+        System.out.println("Employee ID: " + id); 
+        System.out.println("Name: " + name); 
+        System.out.println("Type: " + (type == 2 ? "Manager" : "Regular")); 
+        System.out.println("Base Salary: " + baseSalary); 
+        System.out.println("Total Salary: " + getSalary()); 
+        System.out.println("-----------------------------"); 
+    } 
+    public static void main(String[] args) 
+  { 
+        Employee e1 = new Employee(101, "Ali"); 
+        e1.setBaseSalary(50000); 
+        e1.setType(1); 
+ 
+        Employee e2 = new Employee(102, "Sara"); 
+        e2.setBaseSalary(60000); 
+        e2.setType(2); // Manager 
+        e1.displayInfo(); 
+        e2.displayInfo(); 
+    } 
+}
