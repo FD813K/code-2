@@ -1,0 +1,96 @@
+public class Car 
+  { 
+    private String name; 
+    private String direction; 
+    private int x;   
+    private int y;   
+    public Car(String name, String direction, int x, int y)  
+    { 
+        this.name = name; 
+        this.direction = direction.toUpperCase(); 
+        this.x = x; 
+        this.y = y; 
+    } 
+    public Car(String name, String direction) { 
+        this(name, direction, 0, 0); 
+    } 
+    public void turn() 
+    { 
+       if (direction.equals("N")) 
+     { 
+            direction = "E"; 
+        }  
+     else if (direction.equals("E"))  
+        { 
+            direction = "S"; 
+        }  
+     else if (direction.equals("S")) { 
+            direction = "W"; 
+        }  
+     else if (direction.equals("W")) 
+        { 
+            direction = "N"; 
+        } 
+    } 
+    public void turn(String newDirection)  
+  { 
+        this.direction = newDirection.toUpperCase(); 
+    } 
+    public void move(int distance)  
+      { 
+        if (direction.equals("E")) 
+       { 
+            x += distance; 
+        } else if (direction.equals("W")) 
+       { 
+            x -= distance; 
+        } else if (direction.equals("N"))  
+        { 
+            y += distance; 
+        } else if (direction.equals("S")) 
+       { 
+            y -= distance; 
+        } 
+    } 
+    public String getName() 
+   { 
+        return name; 
+    } 
+ 
+    public String getDirection() 
+   { 
+        return direction; 
+    } 
+ 
+    public int getX() 
+   { 
+        return x; 
+    } 
+ 
+    public int getY()  
+  { 
+        return y; 
+    } 
+    public void displayStatus() 
+   { 
+        System.out.println("\nCar Name: " + name); 
+        System.out.println("Current Direction: " + direction); 
+        System.out.println("Current Position: (" + x + ", " + y + ")"); 
+    } 
+    public static void main(String[] args) 
+   { 
+        Car car1 = new Car("Civic", "N"); 
+        car1.displayStatus(); 
+ 
+        car1.move(10); 
+        car1.displayStatus(); 
+ 
+        car1.turn();  
+        car1.move(5); 
+        car1.displayStatus(); 
+ 
+        car1.turn("S"); 
+        car1.move(3); 
+        car1.displayStatus(); 
+    } 
+} 
