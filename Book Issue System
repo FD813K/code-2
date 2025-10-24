@@ -1,0 +1,58 @@
+package px81; 
+ 
+import java.util.Scanner; 
+ 
+public class Px81 { 
+    public static void main(String[] args) 
+      { 
+        Scanner sc = new Scanner(System.in); 
+        Book b = new Book(); 
+        System.out.println("Enter Book Details:"); 
+        b.get(); 
+        System.out.println("Book Information:"); 
+        b.show(); 
+        System.out.println("Update Book Details:"); 
+        System.out.println("Enter new Book Id: "); 
+        int id = sc.nextInt(); 
+        System.out.println("Enter the new amount Pages: "); 
+        int pg = sc.nextInt(); 
+        System.out.println("Enter new Price of Book: "); 
+        int pr = sc.nextInt(); 
+        b.set(id, pg, pr); 
+        System.out.println("Updated Book Info:"); 
+        b.show(); 
+        System.out.println("Price of the Book: " + b.getPrice()); 
+ 
+        sc.close(); 
+    } 
+} 
+ 
+class Book { 
+    private int bookId; 
+    private int pages; 
+    private int price; 
+    Scanner sc = new Scanner(System.in); 
+    public void get() { 
+        System.out.print("Book Id: "); 
+        bookId = sc.nextInt(); 
+        System.out.print("Pages: "); 
+        pages = sc.nextInt(); 
+        System.out.print("Price: "); 
+        price = sc.nextInt(); 
+    } 
+    public void show() { 
+        System.out.println("Book Id: " + bookId); 
+        System.out.println("Pages: " + pages); 
+        System.out.println("Price: " + price); 
+    } 
+    public void set(int id, int pg, int pr) 
+     { 
+        bookId = id; 
+pages = pg; 
+price = pr; 
+} 
+public int getPrice() 
+{ 
+return price;
+} 
+} 
