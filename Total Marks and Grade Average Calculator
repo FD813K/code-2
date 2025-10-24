@@ -1,0 +1,60 @@
+package px81; 
+ 
+import java.util.Scanner; 
+ 
+public class Px81 
+{ 
+    public static void main(String[] args)  
+    { 
+        Result o1 = new Result(); 
+        o1.input(); 
+        o1.show(); 
+        System.out.println("Total Marks: " + o1.total()); 
+        System.out.println("Average Marks: " + o1.avg()); 
+    } 
+} 
+ 
+class Result { 
+    private int rollNo; 
+    private String name; 
+    private int[] marks = new int[3]; 
+    Scanner x1 = new Scanner(System.in); 
+ 
+    public void input() { 
+        System.out.print("Enter Roll No: "); 
+        rollNo = x1.nextInt(); 
+        x1.nextLine(); 
+        System.out.print("Enter Name: "); 
+        name = x1.nextLine(); 
+        for (int i = 0; i < 3; i++)  
+        { 
+            System.out.print("Enter Marks of Subject " +(i + 1)+ ": "); 
+            marks[i] = x1.nextInt(); 
+        } 
+    } 
+ 
+    public void show() 
+    { 
+        System.out.println("Roll No: "+rollNo); 
+        System.out.println("Name: "+name); 
+        for (int i = 0; i < 3; i++) 
+        { 
+            System.out.println("Marks " +(i + 1)+":"+marks[i]); 
+        } 
+    } 
+ 
+    public int total() 
+    { 
+        int sum = 0; 
+        for (int m : marks) 
+        { 
+            sum += m; 
+        } 
+        return sum; 
+    } 
+ 
+    public double avg()  
+    { 
+        return total()/ 3.0; 
+    } 
+} 
