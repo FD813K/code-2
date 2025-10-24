@@ -1,0 +1,143 @@
+import java.util.Scanner; 
+class Date 
+ { 
+    private int day; 
+    private int month; 
+    private int year; 
+    public Date(int day, int month, int year) 
+  { 
+        this.day = day; 
+        this.month = month; 
+        this.year = year; 
+    } 
+    public Date() 
+  { 
+        this.day = 1; 
+        this.month = 1; 
+        this.year = 1900; 
+    } 
+    @Override 
+    public String toString() { 
+        return day + "/" + month + "/" + year; 
+    } 
+    public int getDay() { 
+        return day; 
+    } 
+ 
+    public void setDay(int day) 
+ { 
+        this.day = day; 
+    } 
+ 
+    public int getMonth() 
+ { 
+        return month; 
+    } 
+ 
+    public void setMonth(int month) 
+  { 
+        this.month = month; 
+    } 
+ 
+    public int getYear() 
+  { 
+        return year; 
+    } 
+ 
+    public void setYear(int year) 
+ { 
+        this.year = year; 
+    } 
+} 
+class Person 
+ { 
+    private String name; 
+    private int age; 
+    private Date dateOfBirth; 
+    public Person() 
+   { 
+        this.name = "Unknown"; 
+        this.age = 0; 
+        this.dateOfBirth = new Date(); 
+    } 
+    public Person(String name, int age, Date dateOfBirth) 
+   { 
+        this.name = name; 
+        this.age = age; 
+        this.dateOfBirth = dateOfBirth; 
+    } 
+    public String getName() 
+   { 
+        return name; 
+    } 
+ 
+    public void setName(String name) 
+   { 
+        this.name = name; 
+    } 
+ 
+    public int getAge()  
+  { 
+        return age; 
+    } 
+ 
+    public void setAge(int age) 
+  { 
+        this.age = age; 
+    } 
+ 
+    public Date getDateOfBirth()  
+   { 
+        return dateOfBirth; 
+    } 
+ 
+    public void setDateOfBirth(Date dateOfBirth) 
+  { 
+        this.dateOfBirth = dateOfBirth; 
+    } 
+    public void display() 
+  { 
+        System.out.println("Name: " + name); 
+        System.out.println("Age: " + age); 
+        System.out.println("Date of Birth: " + dateOfBirth); 
+        System.out.println("-------------------"); 
+    } 
+} 
+public class TestPerson 
+  { 
+    public static void main(String[] args)  
+  { 
+        Scanner input = new Scanner(System.in); 
+        Date dob1 = new Date(15, 5, 2002); 
+        Person person1 = new Person("Ali Usman", 24, dob1); 
+ 
+        Date dob2 = new Date(22, 11, 2005); 
+        Person person2 = new Person("Ulas Yar", 19, dob2); 
+        System.out.print("Enter name: "); 
+        String name = input.nextLine(); 
+ 
+        System.out.print("Enter age: "); 
+        int age = input.nextInt(); 
+ 
+        System.out.print("Enter birth day: "); 
+        int day = input.nextInt(); 
+ 
+        System.out.print("Enter birth month: "); 
+        int month = input.nextInt(); 
+ 
+        System.out.print("Enter birth year: "); 
+        int year = input.nextInt(); 
+        Date userDob = new Date(day, month, year); 
+        Person person3 = new Person(name, age, userDob); 
+        System.out.println("\n--- Person 1 ---"); 
+        person1.display(); 
+ 
+        System.out.println("--- Person 2 ---"); 
+        person2.display(); 
+ 
+        System.out.println("--- Person 3 (You entered) ---"); 
+        person3.display(); 
+ 
+        input.close(); 
+    } 
+} 
