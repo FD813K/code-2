@@ -1,0 +1,46 @@
+import java.util.Scanner; 
+{ 
+    private double height; 
+    private double base; 
+    public Triangle(double h, double b) 
+ { 
+        this.height = h; 
+        this.base = b; 
+    } 
+ 
+    public void setHeight(double x)  
+  { 
+        this.height = x; 
+    } 
+    public void setBase(double x) 
+   { 
+        this.base = x; 
+    } 
+ 
+    public double getHeight()  
+   { 
+        return height; 
+    } 
+ 
+    public double getBase() { 
+        return base; 
+    } 
+ 
+    public double getArea() { 
+        return (base * height) / 2.0; 
+    } 
+ 
+    public static void main(String[] args)  
+  { 
+        Scanner sc = new Scanner(System.in); 
+ 
+        System.out.print("Enter base of triangle: "); 
+        double b = sc.nextDouble(); 
+ 
+        System.out.print("Enter height of triangle: "); 
+        double h = sc.nextDouble(); 
+        Triangle t = new Triangle(h, b); 
+ 
+        System.out.println("Area of Triangle = " + t.getArea()); 
+    } 
+}
